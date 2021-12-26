@@ -10,6 +10,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
 
     # Local
-    path('accounts/', include('accounts.urls')),
+    path('books/', include('books.urls')),
     path('', include('pages.urls')),
 ]
