@@ -5,13 +5,7 @@
 
 {% block content %}
   <h1>Homepage</h1>
-  <img src="{% static 'images/turtle.jfif' %}" alt="turtle" class="bookcover">
-  {% if user.is_authenticated %}
-    <p>Hi {{ user.email }}!</p>
-    <p><a href="{% url 'account_logout' %}">Logout</a></p>
-  {% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'account_login' %}">Login</a>
-    <a href="{% url 'account_signup' %}">Sign Up</a>
-  {% endif %}
+  <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
+    <input name='q' type="text" class="form-control mr-sm-2" placeholder='Search' aria-label='Search'>
+  </form>
 {% endblock content %}
